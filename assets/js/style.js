@@ -3,7 +3,7 @@
       const c = setTimeout(() => {
         document.body.classList.remove("not-loaded");
 
-        const titles = ('I LOVE YOU').split('');
+        const titles = ('Happy Valentine').split('');
         const titleElement = document.getElementById('title');
         let index = 0;
 
@@ -21,7 +21,7 @@
           } else {
             // Setelah teks utama selesai, tambahkan subtitle kecil
             const subtitle = document.createElement('p');
-            subtitle.innerText = "Will you be mine?";
+            subtitle.innerText = "Our relationship feels like a flower we grow together. We don’t bloom all at once but we open slowly, petal by petal. Some days it grows easily, some days it needs more care, but we keep showing up, keep watering it, and that’s how it stays alive.";
             subtitle.style.fontSize = '20px'; // Ukuran font lebih kecil
             subtitle.style.marginTop = '2px'; // Spasi antara teks utama dan subtitle
             subtitle.style.color = '#fff'; // Warna abu-abu untuk teks subtitle
