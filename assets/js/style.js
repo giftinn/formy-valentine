@@ -1,15 +1,38 @@
-const title = document.querySelector('.title')
-const text = 'Hai, Chaven'.split('')
-for (let index = 0; index < text.length; index++) {
-  if (text[index] !== ' ') {
-    title.innerHTML += `<span>${text[index]}<span/>`
-  } else {
-    title.innerHTML += `<span style='margin-right: 20px;'><span/>`
-  }
-}
 
-const textElements = document.querySelectorAll('.title span');
-textElements.forEach((element) => {
-  const randomDelay = Math.random() * 3; // Menghasilkan delay acak antara 0 hingga 3 detik
-  element.style.animationDelay = `${randomDelay}s`;
-});
+    onload = () => {
+      const c = setTimeout(() => {
+        document.body.classList.remove("not-loaded");
+
+        const titles = ('I LOVE YOU').split('');
+        const titleElement = document.getElementById('title');
+        let index = 0;
+
+ function play() {
+          //Link Audio Bisa Diganti
+          var audio = new Audio('anchor.mp3');
+          audio.play();
+        }
+
+        function appendTitle() {
+          if (index < titles.length) {
+            titleElement.innerHTML += titles[index];
+            index++;
+            setTimeout(appendTitle, 300); // 300ms delay per huruf
+          } else {
+            // Setelah teks utama selesai, tambahkan subtitle kecil
+            const subtitle = document.createElement('p');
+            subtitle.innerText = "Will you be mine?";
+            subtitle.style.fontSize = '20px'; // Ukuran font lebih kecil
+            subtitle.style.marginTop = '2px'; // Spasi antara teks utama dan subtitle
+            subtitle.style.color = '#fff'; // Warna abu-abu untuk teks subtitle
+
+            // Menambahkan subtitle di bawah #title
+            titleElement.appendChild(subtitle);
+          }
+        }
+
+    appendTitle();
+
+    clearTimeout(c);
+  }, 1000);
+};
